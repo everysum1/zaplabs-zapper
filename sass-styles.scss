@@ -97,4 +97,60 @@ $border: #999;
       }
     }
   }
+  .content {
+    width: 100%;
+    float: left;
+    padding-top: 2%;
+    main {
+      width: 62%;
+      display: inline-block;
+      border-right: 1px solid $border;
+      padding-right: 3%; 
+      .blog-card {
+        width: 100%;
+        float: left;
+        padding: 3% 0;
+        border-bottom: 1px solid $border;
+        .blog-pic-link {
+          .blog-pic {
+            display: inline-block;
+            position: relative;
+            width: 150px;
+            padding: 1%;
+            border: 1px solid $border;
+            .pic-text {
+              width: 100%;
+              bottom: 0px;
+              height: 25%;
+              background: $highlight;
+              color: $highlight-text;
+              position: absolute;
+              h3 {
+                text-align: center;
+              }
+            }
+          }
+          
+        }
+        .card-content {
+          display: inline-block;
+          width: 100%
+          h2 {
+            font-size: 2em;
+      
+          }
+          .commentary, .author {
+            & > a, span {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+    aside {
+      width: 32%;
+      float: right;
+      display: inline-block;
+    }
+  }
 }

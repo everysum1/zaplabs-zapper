@@ -69,5 +69,44 @@
       float: right; }
       .container .header .search-form input[type="text"] {
         width: 70%; }
+  .container .content {
+    width: 100%;
+    float: left;
+    padding-top: 2%; }
+    .container .content main {
+      width: 62%;
+      display: inline-block;
+      border-right: 1px solid #999;
+      padding-right: 3%; }
+      .container .content main .blog-card {
+        width: 100%;
+        float: left;
+        padding: 3% 0;
+        border-bottom: 1px solid #999; }
+        .container .content main .blog-card .blog-pic-link .blog-pic {
+          display: inline-block;
+          position: relative;
+          width: 150px;
+          padding: 1%;
+          border: 1px solid #999; }
+          .container .content main .blog-card .blog-pic-link .blog-pic .pic-text {
+            width: 100%;
+            bottom: 0px;
+            height: 25%;
+            background: #3661AF;
+            color: #FFF;
+            position: absolute; }
+            .container .content main .blog-card .blog-pic-link .blog-pic .pic-text h3 {
+              text-align: center; }
+        .container .content main .blog-card .card-content {
+          display: inline-block;
+          width: 100% h2;
+            width-font-size: 2em; }
+          .container .content main .blog-card .card-content .commentary > a, .container .content main .blog-card .card-content .commentary span, .container .content main .blog-card .card-content .author > a, .container .content main .blog-card .card-content .author span {
+            float: right; }
+    .container .content aside {
+      width: 32%;
+      float: right;
+      display: inline-block; }
 
 /*# sourceMappingURL=sass-styles.css.map */

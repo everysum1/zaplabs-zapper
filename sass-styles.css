@@ -1,0 +1,16 @@
+.container {
+  padding: 2%;
+  margin: 0 1%; }
+  .container header {
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); }
+    .container header .menu .menu-items:after {
+      display: block;
+      clear: both; }
+      .container header .menu .menu-items:after li {
+        float: left; }
+        .container header .menu .menu-items:after li a {
+          text-align: center;
+          text-decoration: none; }
+
+/*# sourceMappingURL=sass-styles.css.map */

@@ -1,10 +1,100 @@
+$highlight: #3661AF;
+$submenu-highlight: #0C3684;
+$text: #444;
+$highlight-text: #FFF;
+$border: #999;
+
 .container {
+  display: block;
   padding: 2%;
   margin: 0 1%;
-  .menu {
-    .menu-items {
-      list-style: none;
+  .header {
+    height: 100px;
+    display: block;
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+    .menu {
+      height: 100%;
+      width: 66%;
       display: inline-block;
+      .menu-list {
+        height: 100%;
+        &:after {
+          display: block;
+          clear: both;
+        }
+        & > li {
+          float: left;
+          display: inline-block;
+          position: relative;
+          font-size: 1.2em;
+          &:hover {
+            & > a {
+              background: $highlight;
+            }
+          }
+          & > a {
+            margin-right: 4%;
+            display: inline-block;
+            text-shadow: 0px 1px 0px rgba(0,0,0,0.4);
+          }
+        }
+        li {
+          margin: 2%;
+          list-style: none;
+          font-family: 'Times New Roman', Times, serif;
+          &:hover {
+            .sub-menu {
+              z-index: 1;
+              opacity: 1;
+            }
+            & > a {
+              text-decoration: none;
+              color: $highlight-text;
+            }
+          }
+          .sub-menu {
+            width: 160%;
+            padding: 1% 0;
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity linear 0.15s;
+            box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+            background: $highlight;
+            li {
+              display: block;
+              padding: 2%;
+              font-size: 0.8em;
+              &:hover {
+                background: $submenu-highlight;
+              }
+              a {
+                color: $highlight-text;
+                text-decoration: none;
+              }
+            }
+          }
+          a { 
+            color: $text;
+            transition: all linear 0.15s;
+            .arrow {
+              font-size: 0.8em;
+              line-height: 0%;
+            }
+          }
+        }
+      }
+    }
+    .search-form {
+      width: 30%;
+      padding: 2%;
+      float: right;
+      input[type="text"] {
+        width: 70%;
+      }
     }
   }
 }

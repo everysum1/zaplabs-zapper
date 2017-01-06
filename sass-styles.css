@@ -1,16 +1,73 @@
 .container {
+  display: block;
   padding: 2%;
   margin: 0 1%; }
-  .container header {
+  .container .header {
+    height: 100px;
+    display: block;
     width: 100%;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); }
-    .container header .menu .menu-items:after {
-      display: block;
-      clear: both; }
-      .container header .menu .menu-items:after li {
-        float: left; }
-        .container header .menu .menu-items:after li a {
-          text-align: center;
-          text-decoration: none; }
+    .container .header .menu {
+      height: 100%;
+      width: 66%;
+      display: inline-block; }
+      .container .header .menu .menu-list {
+        height: 100%; }
+        .container .header .menu .menu-list:after {
+          display: block;
+          clear: both; }
+        .container .header .menu .menu-list > li {
+          float: left;
+          display: inline-block;
+          position: relative;
+          font-size: 1.2em; }
+          .container .header .menu .menu-list > li:hover > a {
+            background: #3661AF; }
+          .container .header .menu .menu-list > li > a {
+            margin-right: 4%;
+            display: inline-block;
+            text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4); }
+        .container .header .menu .menu-list li {
+          margin: 2%;
+          list-style: none;
+          font-family: 'Times New Roman', Times, serif; }
+          .container .header .menu .menu-list li:hover .sub-menu {
+            z-index: 1;
+            opacity: 1; }
+          .container .header .menu .menu-list li:hover > a {
+            text-decoration: none;
+            color: #FFF; }
+          .container .header .menu .menu-list li .sub-menu {
+            width: 160%;
+            padding: 1% 0;
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity linear 0.15s;
+            box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+            background: #3661AF; }
+            .container .header .menu .menu-list li .sub-menu li {
+              display: block;
+              padding: 2%;
+              font-size: 0.8em; }
+              .container .header .menu .menu-list li .sub-menu li:hover {
+                background: #0C3684; }
+              .container .header .menu .menu-list li .sub-menu li a {
+                color: #FFF;
+                text-decoration: none; }
+          .container .header .menu .menu-list li a {
+            color: #444;
+            transition: all linear 0.15s; }
+            .container .header .menu .menu-list li a .arrow {
+              font-size: 0.8em;
+              line-height: 0%; }
+    .container .header .search-form {
+      width: 30%;
+      padding: 2%;
+      float: right; }
+      .container .header .search-form input[type="text"] {
+        width: 70%; }
 
 /*# sourceMappingURL=sass-styles.css.map */

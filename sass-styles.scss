@@ -3,6 +3,13 @@ $submenu-highlight: #0C3684;
 $text: #444;
 $highlight-text: #FFF;
 $border: #999;
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 6%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: perspective(1px) translateY(-50%);
+}
 
 .container {
   display: block;
@@ -56,7 +63,7 @@ $border: #999;
             width: 150%;
             padding: 1% 0;
             position: absolute;
-            border-radius: 5px;
+            border-radius: .2em;
             top: 100%;
             left: 0px;
             z-index: -1;
@@ -78,7 +85,7 @@ $border: #999;
             }
           }
           a { 
-            border-radius: 5px;  
+            border-radius: .2em;  
             color: $text;
             padding: 5% 7%;
             text-decoration: none;
@@ -105,12 +112,12 @@ $border: #999;
           width: 85%;
           height: 2em;
           font-size: 1.1em;
-          border-radius: 10px 0 0 10px;
+          border-radius: .8em 0 0 .8em;
         }
         input[type="submit"] {
           background: $highlight;
           color: $highlight-text;
-          border-radius: 0 10px 10px 0;
+          border-radius: 0 .8em .8em 0;
           height: 2.4em;
           font-size: 1.1em;
           padding: 1.5%;
@@ -132,13 +139,13 @@ $border: #999;
         float: left;
         padding: 3% 0;
         border-bottom: 1px solid $border;
-        .blog-pic-link {
+        .blog-icon {
+          width: 30%;
+          float: left;
           .blog-pic {
             display: inline-block;
             position: relative;
             width: 150px;
-            padding: 1%;
-            border: 1px solid $border;
             .pic-text {
               width: 100%;
               bottom: 0px;
@@ -148,17 +155,22 @@ $border: #999;
               position: absolute;
               h3 {
                 text-align: center;
+                @include vertical-align();
               }
             }
           }
           
         }
         .card-content {
-          display: inline-block;
-          width: 100%
+          float: right;
+          width: 70%;
           h2 {
             font-size: 2em;
-      
+            margin-top: 0px;
+            margin-bottom: 1%;
+          }
+          p span a {
+            text-decoration: none;
           }
           .commentary, .author {
             & > a, span {

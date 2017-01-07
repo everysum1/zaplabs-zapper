@@ -40,7 +40,7 @@
             width: 150%;
             padding: 1% 0;
             position: absolute;
-            border-radius: 5px;
+            border-radius: .2em;
             top: 100%;
             left: 0px;
             z-index: -1;
@@ -58,7 +58,7 @@
                 color: #FFF;
                 text-decoration: none; }
           .container .header .menu .menu-list li a {
-            border-radius: 5px;
+            border-radius: .2em;
             color: #444;
             padding: 5% 7%;
             text-decoration: none;
@@ -79,11 +79,11 @@
           width: 85%;
           height: 2em;
           font-size: 1.1em;
-          border-radius: 10px 0 0 10px; }
+          border-radius: .8em 0 0 .8em; }
         .container .header .search-form form input[type="submit"] {
           background: #3661AF;
           color: #FFF;
-          border-radius: 0 10px 10px 0;
+          border-radius: 0 .8em .8em 0;
           height: 2.4em;
           font-size: 1.1em;
           padding: 1.5%; }
@@ -101,25 +101,36 @@
         float: left;
         padding: 3% 0;
         border-bottom: 1px solid #999; }
-        .container .content main .blog-card .blog-pic-link .blog-pic {
-          display: inline-block;
-          position: relative;
-          width: 150px;
-          padding: 1%;
-          border: 1px solid #999; }
-          .container .content main .blog-card .blog-pic-link .blog-pic .pic-text {
-            width: 100%;
-            bottom: 0px;
-            height: 25%;
-            background: #3661AF;
-            color: #FFF;
-            position: absolute; }
-            .container .content main .blog-card .blog-pic-link .blog-pic .pic-text h3 {
-              text-align: center; }
+        .container .content main .blog-card .blog-icon {
+          width: 30%;
+          float: left; }
+          .container .content main .blog-card .blog-icon .blog-pic {
+            display: inline-block;
+            position: relative;
+            width: 150px; }
+            .container .content main .blog-card .blog-icon .blog-pic .pic-text {
+              width: 100%;
+              bottom: 0px;
+              height: 25%;
+              background: #3661AF;
+              color: #FFF;
+              position: absolute; }
+              .container .content main .blog-card .blog-icon .blog-pic .pic-text h3 {
+                text-align: center;
+                position: relative;
+                top: 6%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: perspective(1px) translateY(-50%); }
         .container .content main .blog-card .card-content {
-          display: inline-block;
-          width: 100% h2;
-            width-font-size: 2em; }
+          float: right;
+          width: 70%; }
+          .container .content main .blog-card .card-content h2 {
+            font-size: 2em;
+            margin-top: 0px;
+            margin-bottom: 1%; }
+          .container .content main .blog-card .card-content p span a {
+            text-decoration: none; }
           .container .content main .blog-card .card-content .commentary > a, .container .content main .blog-card .card-content .commentary span, .container .content main .blog-card .card-content .author > a, .container .content main .blog-card .card-content .author span {
             float: right; }
     .container .content aside {

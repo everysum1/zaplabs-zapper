@@ -79,6 +79,7 @@ $break-small: 425px;
 /*------ Styles --------*/
 
 body {
+   font-family: 'Times New Roman', Times, serif;
    -webkit-animation: bugfix infinite 1s;
 }
 @-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} } 
@@ -108,57 +109,47 @@ body {
           clear: both;
         }
         @include respond-to(wide-screens) {display: inline-block;}
-        &:last-child {
-          padding-right: 0px;
-          margin-right: 0px;
-        }
         & > li {
+          &:last-child {
+            padding-right: 0px;
+            margin-right: 0px;
+          }
           display: inline-block;
-          position: relative;
+          font-size: .8em;
+          font-weight: 700;
+          margin: 1%;
+          @include respond-to(xtra-wide) {font-size: 1.2em;}
           &:hover {
             & > a {
               background: $highlight;
-            }
-          }
-          a {
-            display: inline-block;
-          }
-        }
-        li {
-          font-size: .8em;
-          margin: 1%;
-          font-family: 'Times New Roman', Times, serif;
-          @include respond-to(xtra-wide) {font-size: 1.2em;}
-          &:hover {
-            .sub-menu {
-             @include menu-show();
-            }
-            a {
               color: $highlight-text;
             }
           }
+        }
+        li {
           .sub-menu {
             @include menu-hidden(down);
+            .side-arrow {
+              float: right;
+            }
             li {
               display: block;
               padding: 2%;
-              .side-arrow {
-                float: right;
-              }
-              .sub-sub-menu {
-                @include menu-hidden(right);
-              }
-              &:hover {
-                @include menu-show();
-                
-                .sub-sub-menu {
-                  @include menu-show();
-                }
-              }
               a {
                 color: $highlight-text;
                 text-decoration: none;
               }
+            }
+          }
+          .sub-sub-menu {
+            @include menu-hidden(right);
+          }
+          &:hover {
+            .sub-menu {
+             @include menu-show();
+            }
+            .sub-sub-menu {
+              @include menu-show();
             }
           }
           a { 
@@ -312,7 +303,7 @@ body {
       .blog-card {
         width: 100%;
         float: left;
-        padding: 3% 0;
+        padding: 5% 0;
         border-bottom: 1px solid $border;
         position: relative;
         .icon-wrapper {
@@ -347,10 +338,9 @@ body {
           }
         }
         .card-content {
-          float: none;
           width: 100%;
           @include respond-to(wide-screens) {
-            width: 72%;
+            width: 70%;
             display: inline-block;
             float: right;
           }

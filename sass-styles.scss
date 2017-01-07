@@ -5,6 +5,7 @@ $submenu-highlight: #0C3684;
 $text: #444;
 $highlight-text: #FFF;
 $border: #999;
+$break-xl: 1440px;
 $break-large: 1024px;
 $break-small: 425px; 
 
@@ -20,16 +21,9 @@ $break-small: 425px;
   @else if $media == wide-screens {
     @media only screen and (min-width: $break-large) {@content}
   }
-}
-
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
-  font-size: $size;
-  font-size: $calculateRem($size);
+  @else if $media == xtra-wide {
+    @media only screen and (min-width: $break-xl) {@content}
+  }
 }
 
 @mixin centered($horizontal: true, $vertical: true) {
@@ -53,10 +47,44 @@ $break-small: 425px;
   }
 }
 
+@mixin menu-hidden($direction) {
+  padding: 1% 0;
+  position: absolute;
+  border-radius: .2em;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity linear 0.15s;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+  background: $highlight;
+  list-style: none;
+  @if $direction == down {
+    width: 205%;
+    top: 100%;
+    left: 0px;
+  }
+  @else if $direction == right {
+    width: 100%;
+    left: 100%;
+  }
+}
+
+@mixin menu-show {
+  z-index: 1;
+  opacity: 1;
+  li:hover {
+    background: $submenu-highlight;
+  }
+}
+
 /*------ Styles --------*/
 
+body {
+   -webkit-animation: bugfix infinite 1s;
+}
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} } 
+
 .container {
-  width: 100%;
+  width: 95%;
   padding: 2%;
   margin: 0 1%;
   .header {
@@ -64,16 +92,25 @@ $break-small: 425px;
     display: block;
     width: 100%;
     box-shadow: 0 4px 2px -2px rgba(0,0,0,0.2);
-    .menu {
+    #nav {
       height: 100%;
-      width: 66%;
+      width: 25%;
       display: inline-block;
+      position: relative;
       .menu-list {
+        display: none;
+        width: 100%;
         height: 100%;
         padding-left: 0px;
+        list-style: none;
         &:after {
           display: block;
           clear: both;
+        }
+        @include respond-to(wide-screens) {display: inline-block;}
+        &:last-child {
+          padding-right: 0px;
+          margin-right: 0px;
         }
         & > li {
           display: inline-block;
@@ -83,43 +120,40 @@ $break-small: 425px;
               background: $highlight;
             }
           }
-          & > a {
+          a {
             display: inline-block;
-            text-shadow: 0px 1px 0px rgba(0,0,0,0.4);
           }
         }
         li {
           font-size: .8em;
           margin: 1%;
-          list-style: none;
           font-family: 'Times New Roman', Times, serif;
+          @include respond-to(xtra-wide) {font-size: 1.2em;}
           &:hover {
             .sub-menu {
-              z-index: 1;
-              opacity: 1;
+             @include menu-show();
             }
-            & > a {
-              text-decoration: none;
+            a {
               color: $highlight-text;
             }
           }
           .sub-menu {
-            width: 150%;
-            padding: 1% 0;
-            position: absolute;
-            border-radius: .2em;
-            top: 100%;
-            left: 0px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity linear 0.15s;
-            box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
-            background: $highlight;
+            @include menu-hidden(down);
             li {
               display: block;
               padding: 2%;
+              .side-arrow {
+                float: right;
+              }
+              .sub-sub-menu {
+                @include menu-hidden(right);
+              }
               &:hover {
-                background: $submenu-highlight;
+                @include menu-show();
+                
+                .sub-sub-menu {
+                  @include menu-show();
+                }
               }
               a {
                 color: $highlight-text;
@@ -130,7 +164,6 @@ $break-small: 425px;
           a { 
             border-radius: .2em;  
             color: $text;
-            padding: 5% 7%;
             text-decoration: none;
             transition: all linear 0.15s;
             width: 100%;
@@ -144,15 +177,110 @@ $break-small: 425px;
           margin-left: 0px;
         } 
       }
+
+      input.trigger {
+        position: absolute;
+        top: -999px;
+        left: -999px;
+        &:checked ~ul, &:checked ~ul li ul {
+          display: block !important;
+          @include respond-to(wide-screens) {
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+
+            display: flex;
+            flex-direction: row;
+          }
+        }
+      }
+
+      label {
+        position: relative;
+        display: block;
+        min-height: 2em;
+        padding: .5em;
+        font-size: 1.1em;
+        margin: 0;
+        cursor: pointer;
+        line-height: 2em;
+      }
+      label:after {
+        position: absolute;
+        right: 1em;
+        top: .2em;
+        content: "\2261";
+        font-size: 1.8em;
+      }
+      @include respond-to(wide-screens) {
+        width: 66%;
+        ul {
+          display: -ms-flexbox;
+          flex-direction: -ms-row;
+          display: -webkit-box;
+          display: -moz-box;
+          display: box;
+
+          -webkit-box-orient: horizontal;
+          -moz-box-orient: horizontal;
+          box-orient: horizontal;
+
+          display: flex;
+          flex-direction: row;
+          
+          li {
+            position: relative;
+            text-align: center;
+
+            -ms-flex: 1;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            box-flex: 1;
+
+            flex: 1;
+
+            ul {
+              display:none !important;
+              position:absolute;
+              top:3.0625em;
+              left:0;
+              display:block;
+              width: 12.5em;
+                z-index:200;
+                li {
+                  text-align: left;
+                  ul {
+                    z-index: 300;
+                    top: 0px;
+                    left: 12.4em;
+                  }
+                }
+            }
+            &:hover > ul {
+              display: block !important;
+            }
+          }
+        }
+        label {
+          display: none;
+        }
+      }
     }
+
     .search-form {
-      width: 32%;
+      width: 60%;
       padding: 2% 0 2% 1%;;
       float: right;
+      @include respond-to(wide-screens) {
+        width: 33%;
+      }
       form {
         height: 100%;
         input[type="text"] {
-          width: 74%;
+          width: 70%;
           height: 2em;
           font-size: .8em;
           border-radius: .8em 0 0 .8em;
@@ -169,6 +297,7 @@ $break-small: 425px;
       }
     }
   }
+
   .content {
     width: 100%;
     float: left;
@@ -185,28 +314,34 @@ $break-small: 425px;
         float: left;
         padding: 3% 0;
         border-bottom: 1px solid $border;
-        .blog-icon {
-          width: 100%;
-          margin: 0 auto;
-          @include respond-to(wide-screens) {
-            width: 30%;
-            float: left;
-          }
-          .blog-pic {
-            display: inline-block;
-            position: relative;
-            width: 150px;
-            .pic-text {
-              width: 100%;
-              bottom: 0px;
-              height: 25%;
-              background: $highlight;
-              color: $highlight-text;
-              position: absolute;
-              h3 {
-                text-align: center;
-                margin: 0px;
-                @include centered;
+        position: relative;
+        .icon-wrapper {
+          width: 40%;
+          @include centered(true, false);
+          @include respond-to(wide-screens) {left: 20%;}
+          .blog-icon {
+            width: 100%;
+            margin: 0 auto;
+            @include respond-to(wide-screens) {width: 40%; float: left;}
+            .blog-pic {
+              background-image: url("http://placehold.it/200x150");
+              display: inline-block;
+              position: relative;
+              width: 10em;
+              height: 12em;
+              @include respond-to(xtra-wide) {width: 13em;}
+              .pic-text {
+                width: 100%;
+                bottom: 0px;
+                height: 25%;
+                background: $highlight;
+                color: $highlight-text;
+                position: absolute;
+                h3 {
+                  text-align: center;
+                  margin: 0px;
+                  @include centered;
+                }
               }
             }
           }
@@ -215,7 +350,7 @@ $break-small: 425px;
           float: none;
           width: 100%;
           @include respond-to(wide-screens) {
-            width: 70%;
+            width: 72%;
             display: inline-block;
             float: right;
           }
@@ -223,6 +358,7 @@ $break-small: 425px;
             font-size: 2em;
             margin-top: 4%;
             margin-bottom: 1%;
+            @include respond-to(wide-screens) {margin-top: 0%;}
           }
           p span a {
             text-decoration: none;
@@ -237,9 +373,11 @@ $break-small: 425px;
     }
     .sidebar {
       width: 100%;
+      margin-top: 6%;
       @include respond-to(wide-screens) {
         width: 32%;
         float: right;
+        margin-top: 2%;
       }
       .side-pic {
         border: 2px solid black;

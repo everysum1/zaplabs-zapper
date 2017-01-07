@@ -32,12 +32,25 @@ $break-small: 425px;
   font-size: $calculateRem($size);
 }
 
-@mixin vertical-align($position: relative) {
-  position: $position;
-  top: 6%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: perspective(1px) translateY(-50%);
+@mixin centered($horizontal: true, $vertical: true) {
+  position: relative;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translate(-50%, 0%);
+  } @else if ($vertical) {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translate(0%, -50%);
+  }
 }
 
 /*------ Styles --------*/
@@ -161,18 +174,24 @@ $break-small: 425px;
     float: left;
     padding-top: 2%;
     main {
-      width: 62%;
-      display: inline-block;
-      border-right: 1px solid $border;
       padding-right: 3%; 
+      display: inline-block;
+      @include respond-to(wide-screens) {
+        width: 62%;
+        border-right: 1px solid $border;
+      }
       .blog-card {
         width: 100%;
         float: left;
         padding: 3% 0;
         border-bottom: 1px solid $border;
         .blog-icon {
-          width: 30%;
-          float: left;
+          width: 100%;
+          margin: 0 auto;
+          @include respond-to(wide-screens) {
+            width: 30%;
+            float: left;
+          }
           .blog-pic {
             display: inline-block;
             position: relative;
@@ -186,18 +205,23 @@ $break-small: 425px;
               position: absolute;
               h3 {
                 text-align: center;
-                @include vertical-align();
+                margin: 0px;
+                @include centered;
               }
             }
           }
-          
         }
         .card-content {
-          float: right;
-          width: 70%;
+          float: none;
+          width: 100%;
+          @include respond-to(wide-screens) {
+            width: 70%;
+            display: inline-block;
+            float: right;
+          }
           h2 {
             font-size: 2em;
-            margin-top: 0px;
+            margin-top: 4%;
             margin-bottom: 1%;
           }
           p span a {
@@ -211,17 +235,18 @@ $break-small: 425px;
         }
       }
     }
-    aside {
-      width: 32%;
-      float: right;
-      @include respond-to(handhelds) {
-        width: 100%;
+    .sidebar {
+      width: 100%;
+      @include respond-to(wide-screens) {
+        width: 32%;
+        float: right;
       }
-      
       .side-pic {
         border: 2px solid black;
         width: 98%;
+        height: 20em;
         margin-bottom: 7%;
+        background-image: url("http://placehold.it/400x300")
       }
     }
   }

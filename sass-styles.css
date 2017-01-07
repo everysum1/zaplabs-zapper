@@ -95,18 +95,24 @@
     float: left;
     padding-top: 2%; }
     .container .content main {
-      width: 62%;
-      display: inline-block;
-      border-right: 1px solid #999;
-      padding-right: 3%; }
+      padding-right: 3%;
+      display: inline-block; }
+      @media only screen and (min-width: 1024px) {
+        .container .content main {
+          width: 62%;
+          border-right: 1px solid #999; } }
       .container .content main .blog-card {
         width: 100%;
         float: left;
         padding: 3% 0;
         border-bottom: 1px solid #999; }
         .container .content main .blog-card .blog-icon {
-          width: 30%;
-          float: left; }
+          width: 100%;
+          margin: 0 auto; }
+          @media only screen and (min-width: 1024px) {
+            .container .content main .blog-card .blog-icon {
+              width: 30%;
+              float: left; } }
           .container .content main .blog-card .blog-icon .blog-pic {
             display: inline-block;
             position: relative;
@@ -120,31 +126,40 @@
               position: absolute; }
               .container .content main .blog-card .blog-icon .blog-pic .pic-text h3 {
                 text-align: center;
+                margin: 0px;
                 position: relative;
-                top: 6%;
+                top: 50%;
+                left: 50%;
                 -webkit-transform: translateY(-50%);
                 -ms-transform: translateY(-50%);
-                transform: perspective(1px) translateY(-50%); }
+                transform: translate(-50%, -50%); }
         .container .content main .blog-card .card-content {
-          float: right;
-          width: 70%; }
+          float: none;
+          width: 100%; }
+          @media only screen and (min-width: 1024px) {
+            .container .content main .blog-card .card-content {
+              width: 70%;
+              display: inline-block;
+              float: right; } }
           .container .content main .blog-card .card-content h2 {
             font-size: 2em;
-            margin-top: 0px;
+            margin-top: 4%;
             margin-bottom: 1%; }
           .container .content main .blog-card .card-content p span a {
             text-decoration: none; }
           .container .content main .blog-card .card-content .commentary > a, .container .content main .blog-card .card-content .commentary span, .container .content main .blog-card .card-content .author > a, .container .content main .blog-card .card-content .author span {
             float: right; }
-    .container .content aside {
-      width: 32%;
-      float: right; }
-      @media only screen and (max-width: 425px) {
-        .container .content aside {
-          width: 100%; } }
-      .container .content aside .side-pic {
+    .container .content .sidebar {
+      width: 100%; }
+      @media only screen and (min-width: 1024px) {
+        .container .content .sidebar {
+          width: 32%;
+          float: right; } }
+      .container .content .sidebar .side-pic {
         border: 2px solid black;
         width: 98%;
-        margin-bottom: 7%; }
+        height: 20em;
+        margin-bottom: 7%;
+        background-image: url("http://placehold.it/400x300"); }
 
 /*# sourceMappingURL=sass-styles.css.map */

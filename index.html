@@ -19,7 +19,9 @@
     <div class="container">
 
       <header class="header">
-        <nav class="menu">
+        <nav role="navigation" id="nav">
+          <input type="checkbox" class="trigger" id="main-nav-btn">
+          <label for="main-nav-btn" onClick>Menu</label>
           <ul class="menu-list">
             <li>
               <a href="#">Web Design<span class="arrow">&#9660;</span></a>
@@ -36,7 +38,14 @@
               <ul class="sub-menu">
                 <li><a href="#">Fireworks</a></li>
                 <li><a href="#">Flash</a></li>
-                <li><a href="#">Icon Design</a></li>
+                <li>
+                  <a href="#"><span>Icon Design</span><span class="side-arrow">&#9658;</span></a>
+                  <ul class="sub-sub-menu">
+                    <li><a href="#">Some Idea</a></li>
+                    <li><a href="#">Another Concept</a></li>
+                    <li><a href="#">A Third Thing</a></li>
+                  </ul>
+                </li>
                 <li><a href="#">Mockups</a></li>
                 <li><a href="#">Logo Design</a></li>
                 <li><a href="#">Photoshop</a></li>
@@ -67,14 +76,15 @@
       <div class="content">
         <main>
           <div class="blog-card">
-            <a class="blog-icon" href="#">
-              <div class="blog-pic">
-                <img src="http://placehold.it/150x150" alt="">
-                <div class="pic-text">
-                  <h3>Competition</h3>
+            <div class="icon-wrapper">
+              <a class="blog-icon" href="#">
+                <div class="blog-pic">
+                  <div class="pic-text">
+                    <h3>Competition</h3>
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
             <div class="card-content">
               <h2>Hashtag paleo kinfolk coloring book, tattooed af retro mumblecore</h2>
               <p><span class="date">February 8, 2043</span><span class="commentary"><a href="#">10 comments and 22 Reactions</a></span></p>
@@ -83,14 +93,15 @@
             </div>
           </div>
           <div class="blog-card">
-            <a class="blog-icon" href="#">
-              <div class="blog-pic">
-                <img src="http://placehold.it/150x150" alt="">
-                <div class="pic-text">
-                  <h3>Mighty Deals</h3>
+            <div class="icon-wrapper">
+              <a class="blog-icon" href="#">
+                <div class="blog-pic">
+                  <div class="pic-text">
+                    <h3>Mighty Deals</h3>
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
             <div class="card-content">
                <h2>Hashtag paleo kinfolk coloring book, tattooed af retro mumblecore</h2>
             <p><span class="date">February 8, 2043</span><span class="commentary"><a href="#">10 comments and 22 Reactions</a></span></p>
@@ -99,14 +110,15 @@
             </div>
           </div>
           <div class="blog-card">
-            <a class="blog-icon" href="#">
-              <div class="blog-pic">
-                <img src="http://placehold.it/150x150" alt="">
-                <div class="pic-text">
-                  <h3>Social</h3>
+            <div class="icon-wrapper">
+              <a class="blog-icon" href="#">
+                <div class="blog-pic">
+                  <div class="pic-text">
+                    <h3>Social</h3>
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
             <div class="card-content">
               <h2>Hashtag paleo kinfolk coloring book, tattooed af retro mumblecore</h2>
               <p><span class="date">February 8, 2043</span><span class="commentary"><a href="#">10 comments and 22 Reactions</a></span></p>
@@ -118,13 +130,13 @@
 
         <aside class="sidebar">
           <div class="side-pic">
-            <img src="http://placehold.it/575x250" alt="">
+           
           </div>
           <div class="side-pic">
-            <img src="http://placehold.it/575x350" alt="">
+            
           </div>
           <div class="side-pic">
-            <img src="http://placehold.it/575x350" alt="">
+     
           </div>
         </aside>
       </div>

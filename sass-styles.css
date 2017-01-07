@@ -1,130 +1,296 @@
+/*------ Variables --------*/
+/*------ Mixins --------*/
+/*------ Styles --------*/
+body {
+  font-family: 'Times New Roman', Times, serif;
+  -webkit-animation: bugfix infinite 1s; }
+
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0; }
+  to {
+    padding: 0; } }
 .container {
-  display: block;
+  width: 95%;
   padding: 2%;
   margin: 0 1%; }
   .container .header {
-    height: 100px;
+    height: 5em;
     display: block;
     width: 100%;
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); }
-    .container .header .menu {
+    .container .header #nav {
       height: 100%;
-      width: 66%;
-      display: inline-block; }
-      .container .header .menu .menu-list {
+      width: 35%;
+      display: inline-block;
+      position: relative; }
+      .container .header #nav .menu-list {
+        display: none;
+        width: 100%;
         height: 100%;
-        padding-left: 0px; }
-        .container .header .menu .menu-list:after {
+        padding-left: 0px;
+        list-style: none; }
+        .container .header #nav .menu-list:after {
           display: block;
           clear: both; }
-        .container .header .menu .menu-list > li {
+        @media only screen and (min-width: 1024px) {
+          .container .header #nav .menu-list {
+            display: inline-block; } }
+        .container .header #nav .menu-list > li {
           display: inline-block;
-          position: relative;
-          font-size: 1.2em; }
-          .container .header .menu .menu-list > li:hover > a {
-            background: #3661AF; }
-          .container .header .menu .menu-list > li > a {
-            display: inline-block;
-            text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4); }
-        .container .header .menu .menu-list li {
-          margin: 2% 3.2% 2% 2%;
-          list-style: none;
-          font-family: 'Times New Roman', Times, serif; }
-          .container .header .menu .menu-list li:hover .sub-menu {
-            z-index: 1;
-            opacity: 1; }
-          .container .header .menu .menu-list li:hover > a {
-            text-decoration: none;
+          font-size: .8em;
+          font-weight: 700;
+          margin: 0.75%; }
+          .container .header #nav .menu-list > li:last-child {
+            padding-right: 0px;
+            margin-right: 0px; }
+          @media only screen and (min-width: 1440px) {
+            .container .header #nav .menu-list > li {
+              font-size: 1.2em; } }
+          .container .header #nav .menu-list > li:hover > a {
+            background: #3661AF;
             color: #FFF; }
-          .container .header .menu .menu-list li .sub-menu {
-            width: 150%;
-            padding: 1% 0;
-            position: absolute;
-            border-radius: 5px;
-            top: 100%;
-            left: 0px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity linear 0.15s;
-            box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
-            background: #3661AF; }
-            .container .header .menu .menu-list li .sub-menu li {
-              display: block;
-              padding: 2%;
-              font-size: 0.8em; }
-              .container .header .menu .menu-list li .sub-menu li:hover {
-                background: #0C3684; }
-              .container .header .menu .menu-list li .sub-menu li a {
-                color: #FFF;
-                text-decoration: none; }
-          .container .header .menu .menu-list li a {
-            border-radius: 5px;
-            color: #444;
-            padding: 5% 7%;
-            text-decoration: none;
-            transition: all linear 0.15s;
-            width: 100%; }
-            .container .header .menu .menu-list li a .arrow {
-              font-size: 0.8em;
-              line-height: 0%; }
-        .container .header .menu .menu-list > li:first-child {
+        .container .header #nav .menu-list li .sub-menu {
+          padding: 1% 0;
+          position: absolute;
+          border-radius: .2em;
+          z-index: -1;
+          opacity: 0;
+          transition: opacity linear 0.15s;
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+          background: #3661AF;
+          list-style: none;
+          width: 205%;
+          top: 100%;
+          left: 0px; }
+          .container .header #nav .menu-list li .sub-menu .side-arrow {
+            float: right; }
+          .container .header #nav .menu-list li .sub-menu li {
+            display: block;
+            padding: 2%; }
+            .container .header #nav .menu-list li .sub-menu li a {
+              color: #FFF;
+              text-decoration: none; }
+        .container .header #nav .menu-list li .sub-sub-menu {
+          padding: 1% 0;
+          position: absolute;
+          border-radius: .2em;
+          z-index: -1;
+          opacity: 0;
+          transition: opacity linear 0.15s;
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+          background: #3661AF;
+          list-style: none;
+          width: 100%;
+          left: 100%; }
+        .container .header #nav .menu-list li:hover .sub-menu {
+          z-index: 1;
+          opacity: 1; }
+          .container .header #nav .menu-list li:hover .sub-menu li:hover {
+            background: #0C3684; }
+        .container .header #nav .menu-list li:hover .sub-sub-menu {
+          z-index: 1;
+          opacity: 1; }
+          .container .header #nav .menu-list li:hover .sub-sub-menu li:hover {
+            background: #0C3684; }
+        .container .header #nav .menu-list li a {
+          border-radius: .2em;
+          color: #444;
+          text-decoration: none;
+          transition: all linear 0.15s;
+          width: 100%; }
+          .container .header #nav .menu-list li a .arrow {
+            font-size: 0.8em;
+            line-height: 0%; }
+        .container .header #nav .menu-list > li:first-child {
           margin-left: 0px; }
+      .container .header #nav input.trigger {
+        position: absolute;
+        top: -999px;
+        left: -999px; }
+        .container .header #nav input.trigger:checked ~ ul, .container .header #nav input.trigger:checked ~ ul li ul {
+          display: block; }
+          @media only screen and (min-width: 1024px) {
+            .container .header #nav input.trigger:checked ~ ul, .container .header #nav input.trigger:checked ~ ul li ul {
+              display: -webkit-box;
+              display: -moz-box;
+              display: box;
+              -webkit-box-orient: horizontal;
+              -moz-box-orient: horizontal;
+              box-orient: horizontal;
+              display: flex;
+              flex-direction: row; } }
+      .container .header #nav label {
+        position: relative;
+        display: block;
+        min-height: 2em;
+        padding-left: 5%;
+        font-size: 1.1em;
+        margin: 0;
+        cursor: pointer;
+        line-height: 2em; }
+      .container .header #nav label:before {
+        float: left;
+        right: 1em;
+        top: .2em;
+        content: "\2261 \00a0";
+        font-size: 1.8em; }
+      @media only screen and (min-width: 1024px) {
+        .container .header #nav {
+          width: 66%; }
+          .container .header #nav ul {
+            display: -ms-flexbox;
+            flex-direction: -ms-row;
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            display: flex;
+            flex-direction: row; }
+            .container .header #nav ul li {
+              position: relative;
+              text-align: center;
+              -ms-flex: 1;
+              -webkit-box-flex: 1;
+              -moz-box-flex: 1;
+              box-flex: 1;
+              flex: 1; }
+              .container .header #nav ul li ul {
+                display: none !important;
+                position: absolute;
+                top: 3.0625em;
+                left: 0;
+                display: block;
+                width: 12.5em;
+                z-index: 200; }
+                .container .header #nav ul li ul li {
+                  text-align: left; }
+                  .container .header #nav ul li ul li ul {
+                    z-index: 300;
+                    top: 0px;
+                    left: 12.4em; }
+              .container .header #nav ul li:hover > ul {
+                display: block !important; }
+          .container .header #nav label {
+            display: none; } }
     .container .header .search-form {
-      width: 32%;
-      padding: 2% 0 2% 0%;
+      width: 60%;
+      padding: 1.5% 0 2% 2%;
       float: right; }
+      @media only screen and (min-width: 1024px) {
+        .container .header .search-form {
+          width: 32%; } }
       .container .header .search-form form {
         height: 100%; }
         .container .header .search-form form input[type="text"] {
-          width: 85%;
+          width: 70%;
           height: 2em;
-          font-size: 1.1em;
-          border-radius: 10px 0 0 10px; }
+          font-size: .8em;
+          border-radius: .8em 0 0 .8em; }
         .container .header .search-form form input[type="submit"] {
+          width: 24%;
           background: #3661AF;
           color: #FFF;
-          border-radius: 0 10px 10px 0;
+          border-radius: 0 .8em .8em 0;
           height: 2.4em;
-          font-size: 1.1em;
+          font-size: .8em;
           padding: 1.5%; }
   .container .content {
     width: 100%;
     float: left;
     padding-top: 2%; }
     .container .content main {
-      width: 62%;
-      display: inline-block;
-      border-right: 1px solid #999;
-      padding-right: 3%; }
+      padding-right: 3%;
+      display: inline-block; }
+      @media only screen and (min-width: 1024px) {
+        .container .content main {
+          width: 62%;
+          border-right: 1px solid #999; } }
       .container .content main .blog-card {
         width: 100%;
         float: left;
-        padding: 3% 0;
-        border-bottom: 1px solid #999; }
-        .container .content main .blog-card .blog-pic-link .blog-pic {
-          display: inline-block;
-          position: relative;
-          width: 150px;
-          padding: 1%;
-          border: 1px solid #999; }
-          .container .content main .blog-card .blog-pic-link .blog-pic .pic-text {
-            width: 100%;
-            bottom: 0px;
-            height: 25%;
-            background: #3661AF;
-            color: #FFF;
-            position: absolute; }
-            .container .content main .blog-card .blog-pic-link .blog-pic .pic-text h3 {
-              text-align: center; }
+        margin: 6% 0;
+        border-bottom: 1px solid #999;
+        padding-bottom: 6%;
+        position: relative; }
+        .container .content main .blog-card .icon-wrapper {
+          width: 40%; }
+          @media only screen and (max-width: 425px) {
+            .container .content main .blog-card .icon-wrapper {
+              position: relative;
+              left: 50%;
+              -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              transform: translate(-50%, 0%); } }
+          @media only screen and (min-width: 1024px) {
+            .container .content main .blog-card .icon-wrapper {
+              left: 20%; } }
+          @media only screen and (min-width: 426px) {
+            .container .content main .blog-card .icon-wrapper .blog-icon {
+              width: 40%;
+              float: left; } }
+          .container .content main .blog-card .icon-wrapper .blog-icon .blog-pic {
+            background-image: url("images/pic1.png");
+            background-size: cover;
+            background-position: center;
+            display: inline-block;
+            position: relative;
+            width: 10em;
+            height: 12em; }
+            @media only screen and (min-width: 1440px) {
+              .container .content main .blog-card .icon-wrapper .blog-icon .blog-pic {
+                width: 13em; } }
+            .container .content main .blog-card .icon-wrapper .blog-icon .blog-pic .pic-text {
+              width: 100%;
+              bottom: 0px;
+              height: 25%;
+              background: #3661AF;
+              color: #FFF;
+              position: absolute; }
+              .container .content main .blog-card .icon-wrapper .blog-icon .blog-pic .pic-text h3 {
+                text-align: center;
+                margin: 0px;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translate(-50%, -50%); }
         .container .content main .blog-card .card-content {
-          display: inline-block;
-          width: 100% h2;
-            width-font-size: 2em; }
+          width: 100%; }
+          @media only screen and (min-width: 426px) {
+            .container .content main .blog-card .card-content {
+              width: 69%;
+              display: inline-block;
+              float: right; } }
+          .container .content main .blog-card .card-content h2 {
+            font-size: 2em;
+            margin-top: 4%;
+            margin-bottom: 1%; }
+            @media only screen and (min-width: 426px) {
+              .container .content main .blog-card .card-content h2 {
+                margin-top: 0%; } }
+          .container .content main .blog-card .card-content p span a {
+            text-decoration: none; }
           .container .content main .blog-card .card-content .commentary > a, .container .content main .blog-card .card-content .commentary span, .container .content main .blog-card .card-content .author > a, .container .content main .blog-card .card-content .author span {
             float: right; }
-    .container .content aside {
-      width: 32%;
-      float: right;
-      display: inline-block; }
+    .container .content .sidebar {
+      width: 100%;
+      margin-top: 6%; }
+      @media only screen and (min-width: 1024px) {
+        .container .content .sidebar {
+          width: 32%;
+          float: right;
+          margin-top: 2%; } }
+      .container .content .sidebar .side-pic {
+        border: 2px solid black;
+        width: 98%;
+        height: 15em;
+        margin-bottom: 7%;
+        background-image: url("images/pic2.png");
+        background-size: cover;
+        background-position: center; }
 
 /*# sourceMappingURL=sass-styles.css.map */

@@ -316,7 +316,7 @@ body {
           .blog-icon {
             @include respond-to(medium-screens) {width: 40%; float: left;}
             .blog-pic {
-              background-image: url("pic1.png");
+              background-image: url("images/pic1.png");
               background-size: cover;
               background-position: center;
               display: inline-block;
@@ -377,7 +377,7 @@ body {
         width: 98%;
         height: 15em;
         margin-bottom: 7%;
-        background-image: url("pic2.png");
+        background-image: url("images/pic2.png");
         background-size: cover;
         background-position: center;
       }

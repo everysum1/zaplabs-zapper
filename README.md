@@ -3,8 +3,13 @@
 
 Centralized blog news source for all things **front end dev** and _design-related_...
 
+### Mockup
 ![mockup](/images/zapper-mockup.png)
+
+### Desktop view
 ![desktop](/images/ScreenShot-desktop.png) 
+
+### Mobile View
 ![mobile](/images/ScreenShot-mobile.png)
 
 ## Getting Started

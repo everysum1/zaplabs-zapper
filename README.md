@@ -4,17 +4,17 @@
 Centralized blog news source for all things **front end dev** and _design-related_...
 
 ### *Mockup*
-![mockup](/images/zapper-mockup.png "My mockup")
+![mockup](/images/zapper-mockup.png "Balsamiq mockup")
 
 ***
 
 ### *Desktop view*
-![desktop](/images/ScreenShot-desktop.png "1024px") 
+![desktop](/images/ScreenShot-desktop.png "1024px screen size") 
 
 ***
 
 ### *Mobile View*
-![mobile](/images/ScreenShot-mobile.png "425px")
+![mobile](/images/ScreenShot-mobile.png "425px screen size")
 
 ***
 
@@ -51,6 +51,7 @@ $ open index.html
 * [VS Code](https://code.visualstudio.com/) -  source code editor
 * [Google Chrome](https://www.google.com/chrome/) - Version 55.0.2883.95 browser & dev tools 
 * [Sass](http://sass-lang.com/) - CSS extension language
+* [Balsamiq](https://balsamiq.com) - Mockup/wireframe software
 
 ## Authors
 

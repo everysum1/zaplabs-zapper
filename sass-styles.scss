@@ -3,6 +3,10 @@ $submenu-highlight: #0C3684;
 $text: #444;
 $highlight-text: #FFF;
 $border: #999;
+$break-medium: 1024px;
+$break-small: 768px;
+$break-xs: 425px; 
+
 @mixin vertical-align($position: relative) {
   position: $position;
   top: 6%;
@@ -12,11 +16,10 @@ $border: #999;
 }
 
 .container {
-  display: block;
   padding: 2%;
   margin: 0 1%;
   .header {
-    height: 100px;
+    height: 5em;
     display: block;
     width: 100%;
     box-shadow: 0 4px 2px -2px rgba(0,0,0,0.2);
@@ -34,7 +37,6 @@ $border: #999;
         & > li {
           display: inline-block;
           position: relative;
-          font-size: 1.2em;
           &:hover {
             & > a {
               background: $highlight;
@@ -46,7 +48,8 @@ $border: #999;
           }
         }
         li {
-          margin: 2% 3.2% 2% 2%;
+          font-size: .8em;
+          margin: 1%;
           list-style: none;
           font-family: 'Times New Roman', Times, serif;
           &:hover {
@@ -74,7 +77,6 @@ $border: #999;
             li {
               display: block;
               padding: 2%;
-              font-size: 0.8em;
               &:hover {
                 background: $submenu-highlight;
               }
@@ -104,22 +106,23 @@ $border: #999;
     }
     .search-form {
       width: 32%;
-      padding: 2% 0 2% 0%;;
+      padding: 2% 0 2% 1%;;
       float: right;
       form {
         height: 100%;
         input[type="text"] {
-          width: 85%;
+          width: 74%;
           height: 2em;
-          font-size: 1.1em;
+          font-size: .8em;
           border-radius: .8em 0 0 .8em;
         }
         input[type="submit"] {
+          width: 24%;
           background: $highlight;
           color: $highlight-text;
           border-radius: 0 .8em .8em 0;
           height: 2.4em;
-          font-size: 1.1em;
+          font-size: .8em;
           padding: 1.5%;
         }
       }
@@ -183,7 +186,11 @@ $border: #999;
     aside {
       width: 32%;
       float: right;
-      display: inline-block;
+      .side-pic {
+        border: 2px solid black;
+        width: 100%;
+        margin-bottom: 7%;
+      }
     }
   }
 }

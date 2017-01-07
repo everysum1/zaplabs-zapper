@@ -1,9 +1,8 @@
 .container {
-  display: block;
   padding: 2%;
   margin: 0 1%; }
   .container .header {
-    height: 100px;
+    height: 5em;
     display: block;
     width: 100%;
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); }
@@ -19,15 +18,15 @@
           clear: both; }
         .container .header .menu .menu-list > li {
           display: inline-block;
-          position: relative;
-          font-size: 1.2em; }
+          position: relative; }
           .container .header .menu .menu-list > li:hover > a {
             background: #3661AF; }
           .container .header .menu .menu-list > li > a {
             display: inline-block;
             text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4); }
         .container .header .menu .menu-list li {
-          margin: 2% 3.2% 2% 2%;
+          font-size: .8em;
+          margin: 1%;
           list-style: none;
           font-family: 'Times New Roman', Times, serif; }
           .container .header .menu .menu-list li:hover .sub-menu {
@@ -50,8 +49,7 @@
             background: #3661AF; }
             .container .header .menu .menu-list li .sub-menu li {
               display: block;
-              padding: 2%;
-              font-size: 0.8em; }
+              padding: 2%; }
               .container .header .menu .menu-list li .sub-menu li:hover {
                 background: #0C3684; }
               .container .header .menu .menu-list li .sub-menu li a {
@@ -71,21 +69,22 @@
           margin-left: 0px; }
     .container .header .search-form {
       width: 32%;
-      padding: 2% 0 2% 0%;
+      padding: 2% 0 2% 1%;
       float: right; }
       .container .header .search-form form {
         height: 100%; }
         .container .header .search-form form input[type="text"] {
-          width: 85%;
+          width: 74%;
           height: 2em;
-          font-size: 1.1em;
+          font-size: .8em;
           border-radius: .8em 0 0 .8em; }
         .container .header .search-form form input[type="submit"] {
+          width: 24%;
           background: #3661AF;
           color: #FFF;
           border-radius: 0 .8em .8em 0;
           height: 2.4em;
-          font-size: 1.1em;
+          font-size: .8em;
           padding: 1.5%; }
   .container .content {
     width: 100%;
@@ -135,7 +134,10 @@
             float: right; }
     .container .content aside {
       width: 32%;
-      float: right;
-      display: inline-block; }
+      float: right; }
+      .container .content aside .side-pic {
+        border: 2px solid black;
+        width: 100%;
+        margin-bottom: 7%; }
 
 /*# sourceMappingURL=sass-styles.css.map */

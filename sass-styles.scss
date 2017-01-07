@@ -1,11 +1,36 @@
+/*------ Variables --------*/
+
 $highlight: #3661AF;
 $submenu-highlight: #0C3684;
 $text: #444;
 $highlight-text: #FFF;
 $border: #999;
-$break-medium: 1024px;
-$break-small: 768px;
-$break-xs: 425px; 
+$break-large: 1024px;
+$break-small: 425px; 
+
+/*------ Mixins --------*/
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) {@content}
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) {@content}
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) {@content}
+  }
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: $calculateRem($size);
+}
 
 @mixin vertical-align($position: relative) {
   position: $position;
@@ -15,7 +40,10 @@ $break-xs: 425px;
   transform: perspective(1px) translateY(-50%);
 }
 
+/*------ Styles --------*/
+
 .container {
+  width: 100%;
   padding: 2%;
   margin: 0 1%;
   .header {
@@ -186,9 +214,13 @@ $break-xs: 425px;
     aside {
       width: 32%;
       float: right;
+      @include respond-to(handhelds) {
+        width: 100%;
+      }
+      
       .side-pic {
         border: 2px solid black;
-        width: 100%;
+        width: 98%;
         margin-bottom: 7%;
       }
     }

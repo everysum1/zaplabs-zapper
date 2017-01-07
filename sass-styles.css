@@ -1,4 +1,8 @@
+/*------ Variables --------*/
+/*------ Mixins --------*/
+/*------ Styles --------*/
 .container {
+  width: 100%;
   padding: 2%;
   margin: 0 1%; }
   .container .header {
@@ -135,9 +139,12 @@
     .container .content aside {
       width: 32%;
       float: right; }
+      @media only screen and (max-width: 425px) {
+        .container .content aside {
+          width: 100%; } }
       .container .content aside .side-pic {
         border: 2px solid black;
-        width: 100%;
+        width: 98%;
         margin-bottom: 7%; }
 
 /*# sourceMappingURL=sass-styles.css.map */

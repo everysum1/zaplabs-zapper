@@ -6,13 +6,13 @@ Centralized blog news source for all things **front end dev** and _design-relate
 ### Mockup
 ![mockup](/images/zapper-mockup.png)
 
-### Desktop view
+### *Desktop view*
 ![desktop](/images/ScreenShot-desktop.png) 
 
-### Mobile View
+### *Mobile View*
 ![mobile](/images/ScreenShot-mobile.png)
 
-## Getting Started
+## *Getting Started*
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 

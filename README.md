@@ -13,6 +13,11 @@ Centralized blog news source for all things **front end dev** and _design-relate
 
 ***
 
+<div>
+<h3><em>Tablet View</em></h3>
+<img src="http://www.github.com/everysum1/zaplabs-zapper/images/ScreenShot - tablet.png" />
+</div>
+
 ### *Mobile View*
 ![mobile](/images/ScreenShot-mobile.png "425px screen size")
 

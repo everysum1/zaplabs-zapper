@@ -15,7 +15,7 @@ Centralized blog news source for all things **front end dev** and _design-relate
 
 <div>
 <h3><em>Tablet View</em></h3>
-<img src="http://www.github.com/everysum1/zaplabs-zapper/images/ScreenShot - tablet.png" />
+<img src="https://github.com/everysum1/zaplabs-zapper/blob/master/images/ScreenShot%20-%20tablet.png" />
 </div>
 
 ### *Mobile View*

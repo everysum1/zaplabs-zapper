@@ -18,6 +18,8 @@ Centralized blog news source for all things **front end dev** and _design-relate
 <img src="https://github.com/everysum1/zaplabs-zapper/blob/master/images/ScreenShot%20-%20tablet.png" />
 </div>
 
+<hr>
+
 ### *Mobile View*
 ![mobile](/images/ScreenShot-mobile.png "425px screen size")
 
